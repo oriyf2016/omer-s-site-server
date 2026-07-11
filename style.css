@@ -10,8 +10,8 @@
     
     /* צבעי דרגות מעודכנים */
     --color-owner: #ff4757;
-    --color-admin: #ff3838;
-    --color-helper: #1e90ff;
+    --color-admin: #d32f2f;     /* אדום כהה יוקרתי לאדמין */
+    --color-helper: #1e90ff;    /* כחול להלפר */
 }
 
 * {
@@ -100,7 +100,7 @@ body {
     box-shadow: 0 6px 20px var(--accent);
 }
 
-/* הגדרת ה-Modal המרכזית למניעת חסימת כפתורים */
+/* הגדרת ה-Modal המרכזית */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -318,7 +318,6 @@ body {
 /* מערכת כרטיסיות צוות (Staff) */
 .staff-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    justify-content: center;
 }
 
 .staff-card {
@@ -372,14 +371,14 @@ body {
     font-weight: 700;
 }
 
-/* הגדרות צבעים ודרגות מעודכנות */
+/* הגדרות צבעים ומסגרות לדרגות (כולל אדמין החדש!) */
 .rank-owner { border-top: 3px solid var(--color-owner); }
 .rank-owner .rank-badge { background: rgba(255, 71, 87, 0.15); color: var(--color-owner); }
 .rank-owner:hover { border-color: var(--color-owner); box-shadow: 0 10px 30px rgba(255, 71, 87, 0.15); }
 
 .rank-admin { border-top: 3px solid var(--color-admin); }
-.rank-admin .rank-badge { background: rgba(255, 56, 56, 0.15); color: var(--color-admin); }
-.rank-admin:hover { border-color: var(--color-admin); box-shadow: 0 10px 30px rgba(255, 56, 56, 0.15); }
+.rank-admin .rank-badge { background: rgba(211, 47, 47, 0.15); color: var(--color-admin); }
+.rank-admin:hover { border-color: var(--color-admin); box-shadow: 0 10px 30px rgba(211, 47, 47, 0.15); }
 
 .rank-helper { border-top: 3px solid var(--color-helper); }
 .rank-helper .rank-badge { background: rgba(30, 144, 255, 0.15); color: var(--color-helper); }
