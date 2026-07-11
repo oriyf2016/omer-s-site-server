@@ -55,7 +55,7 @@ function initNavigation() {
 }
 
 /**
- * מנגנון המודל המורחב לחברי הצוות על סמך נתוני הטקסטים שהגדרת
+ * מנגנון המודל המורחב לחברי הצוות על סמך נתוני הטקסטים המעודכנים
  */
 function initStaffModal() {
     const staffCards = document.querySelectorAll(".staff-card");
@@ -67,76 +67,8 @@ function initStaffModal() {
     const modalDesc = document.getElementById("modal-desc");
     const modalSkinImg = document.getElementById("modal-skin-img");
 
+    // מאגר המידע המעודכן לפי השינויים בדרגות ובצוות
     const staffData = {
         ori: {
             title: "אורי",
-            rank: "בעלים",
-            desc: "אורי הוא בעלי השרת התומך בתכנות וזמינות סבירה וגם תכנת את האתר בו אתם נמצאים!",
-            skin: "https://surgeplay.com",
-            colorClass: "rank-owner"
-        },
-        omer: {
-            title: "עומר",
-            rank: "בעלים",
-            desc: "עומר הוא בעלי השרת שנאמן וזמין זמן רב ואוהב את השרת.",
-            skin: "https://surgeplay.com",
-            colorClass: "rank-owner"
-        },
-        itamar: {
-            title: "איתמר",
-            rank: "בנאי",
-            desc: "איתמר הוא אדם סביר הטוב בבניות ומוכר בתים בתוך השרת.",
-            skin: "https://surgeplay.com",
-            colorClass: "rank-builder"
-        },
-        afek: {
-            title: "אפק",
-            rank: "הלפר",
-            desc: "אפק הוא הלפר זמין נאמן וחברותי המשחק בשרת.",
-            skin: "https://surgeplay.com",
-            colorClass: "rank-helper"
-        },
-        ofek: {
-            title: "אופק",
-            rank: "מודרייטור",
-            desc: "אופק הוא אדם תחרותי ומעט מרגיז שמנסה להיות ה'אלוף' של הקהילה. (בקושי זמין)",
-            skin: "https://surgeplay.com",
-            colorClass: "rank-moderator"
-        }
-    };
-
-    if (!modal || !modalClose) return;
-
-    staffCards.forEach(card => {
-        card.addEventListener("click", () => {
-            const id = card.getAttribute("data-staff");
-            const data = staffData[id];
-
-            if (data) {
-                modalTitle.textContent = data.title;
-                modalRank.textContent = data.rank;
-                modalDesc.textContent = data.desc;
-                modalSkinImg.src = data.skin;
-
-                modalRank.className = "rank-badge";
-                
-                if (data.colorClass === "rank-owner") { modalRank.style.backgroundColor = "rgba(255, 71, 87, 0.15)"; modalRank.style.color = "#ff4757"; }
-                if (data.colorClass === "rank-moderator") { modalRank.style.backgroundColor = "rgba(255, 165, 2, 0.15)"; modalRank.style.color = "#ffa502"; }
-                if (data.colorClass === "rank-builder") { modalRank.style.backgroundColor = "rgba(46, 213, 115, 0.15)"; modalRank.style.color = "#2ed573"; }
-                if (data.colorClass === "rank-helper") { modalRank.style.backgroundColor = "rgba(30, 144, 255, 0.15)"; modalRank.style.color = "#1e90ff"; }
-
-                modal.classList.add("active");
-            }
-        });
-    });
-
-    modalClose.addEventListener("click", () => {
-        modal.classList.remove("active");
-    });
-
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-            modal.classList.remove("active");
-        }
-    });
-}
+            
