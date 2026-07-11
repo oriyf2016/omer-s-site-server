@@ -8,10 +8,9 @@
     --text-secondary: #9494a8;
     --border-color: rgba(255, 255, 255, 0.06);
     
-    /* צבעי דרגות */
+    /* צבעי דרגות מעודכנים */
     --color-owner: #ff4757;
-    --color-moderator: #ffa502;
-    --color-builder: #2ed573;
+    --color-admin: #ff3838;
     --color-helper: #1e90ff;
 }
 
@@ -101,7 +100,7 @@ body {
     box-shadow: 0 6px 20px var(--accent);
 }
 
-/* הגדרת ה-Modal המרכזית הועברה לכאן כדי למנוע חסימת כפתורים */
+/* הגדרת ה-Modal המרכזית למניעת חסימת כפתורים */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -112,7 +111,7 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 2000;
-    display: none; /* קריטי: מונע מהמסך להיחסם כשהחלון סגור */
+    display: none;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -121,7 +120,6 @@ body {
 .modal-overlay.active {
     display: flex;
 }
-
 /* מערכת העמודים הדינמית - הסתרה והצגה */
 .page-content {
     display: none;
@@ -320,6 +318,7 @@ body {
 /* מערכת כרטיסיות צוות (Staff) */
 .staff-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    justify-content: center;
 }
 
 .staff-card {
@@ -373,18 +372,14 @@ body {
     font-weight: 700;
 }
 
-/* הגדרות צבעים מדויקות לדרגות */
+/* הגדרות צבעים ודרגות מעודכנות */
 .rank-owner { border-top: 3px solid var(--color-owner); }
 .rank-owner .rank-badge { background: rgba(255, 71, 87, 0.15); color: var(--color-owner); }
 .rank-owner:hover { border-color: var(--color-owner); box-shadow: 0 10px 30px rgba(255, 71, 87, 0.15); }
 
-.rank-moderator { border-top: 3px solid var(--color-moderator); }
-.rank-moderator .rank-badge { background: rgba(255, 165, 2, 0.15); color: var(--color-moderator); }
-.rank-moderator:hover { border-color: var(--color-moderator); box-shadow: 0 10px 30px rgba(255, 165, 2, 0.15); }
-
-.rank-builder { border-top: 3px solid var(--color-builder); }
-.rank-builder .rank-badge { background: rgba(46, 213, 115, 0.15); color: var(--color-builder); }
-.rank-builder:hover { border-color: var(--color-builder); box-shadow: 0 10px 30px rgba(46, 213, 115, 0.15); }
+.rank-admin { border-top: 3px solid var(--color-admin); }
+.rank-admin .rank-badge { background: rgba(255, 56, 56, 0.15); color: var(--color-admin); }
+.rank-admin:hover { border-color: var(--color-admin); box-shadow: 0 10px 30px rgba(255, 56, 56, 0.15); }
 
 .rank-helper { border-top: 3px solid var(--color-helper); }
 .rank-helper .rank-badge { background: rgba(30, 144, 255, 0.15); color: var(--color-helper); }
