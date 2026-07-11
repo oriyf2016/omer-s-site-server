@@ -12,6 +12,7 @@
     --color-owner: #ff4757;
     --color-builder: #2ed573;
     --color-helper: #1e90ff;
+    --color-member: #ffa502;
 }
 
 * {
@@ -100,7 +101,7 @@ body {
     box-shadow: 0 6px 20px var(--accent);
 }
 
-/* מערכת העמודים הדינמית - הסתרה והצגה */
+/* מערכת העמודים הדינמית */
 .page-content {
     display: none;
     flex-grow: 1;
@@ -135,11 +136,8 @@ body {
     flex-grow: 1;
 }
 
-.hero-content {
-    max-width: 800px;
-}
+.hero-content { max-width: 800px; }
 
-/* תגית סטטוס */
 .status-badge {
     display: inline-flex;
     align-items: center;
@@ -187,7 +185,6 @@ body {
     line-height: 1.6;
 }
 
-/* תיבת העתקת IP מעוצבת */
 .ip-container {
     display: inline-flex;
     align-items: center;
@@ -204,24 +201,9 @@ body {
     transform: translateY(-2px);
 }
 
-.ip-details {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
-    margin-left: 30px;
-}
-
-.ip-title {
-    font-size: 11px;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-}
-
-.ip-text {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-}
+.ip-details { display: flex; flex-direction: column; text-align: right; margin-left: 30px; }
+.ip-title { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; }
+.ip-text { font-size: 16px; font-weight: 700; letter-spacing: 0.5px; }
 
 .ip-copy-btn {
     background: rgba(255, 255, 255, 0.05);
@@ -234,33 +216,11 @@ body {
     transition: background 0.2s;
 }
 
-.ip-container:hover .ip-copy-btn {
-    background: var(--accent);
-    border-color: var(--accent);
-}
-
-/* כותרות עמודים */
-.section-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.section-header h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.section-header p {
-    color: var(--text-secondary);
-}
-
-/* גריד קופסאות */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
+.ip-container:hover .ip-copy-btn { background: var(--accent); border-color: var(--accent); }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+.section-header p { color: var(--text-secondary); }
+.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
 
 .feature-card {
     background: var(--bg-surface);
@@ -270,145 +230,117 @@ body {
     transition: transform 0.3s, border-color 0.3s;
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(124, 77, 255, 0.3);
-}
+.feature-card:hover { transform: translateY(-5px); border-color: rgba(124, 77, 255, 0.3); }
+.card-icon { font-size: 35px; margin-bottom: 15px; }
+.feature-card h3 { font-size: 22px; margin-bottom: 15px; font-weight: 600; }
+.feature-card p { color: var(--text-secondary); line-height: 1.6; }
+.mode-card { border-top: 3px solid var(--accent); }
 
-.card-icon {
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.feature-card h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.feature-card p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-/* סגנון ספציפי למצבי משחק */
-.mode-card {
-    border-top: 3px solid var(--accent);
-}
-
-/* מערכת כרטיסיות צוות (Staff) */
-.staff-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-}
+/* מערכת כרטיסיות צוות ושחקנים */
+.staff-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 
 .staff-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 30px 20px;
+    padding: 25px 15px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, border-color 0.3s;
+    cursor: pointer;
 }
 
-.staff-card:hover {
-    transform: translateY(-5px);
-}
+.staff-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+.skin-wrapper { height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+.staff-skin { height: 100%; filter: drop-shadow(0 8px 12px rgba(0,0,0,0.5)); transition: transform 0.3s; }
+.staff-card:hover .staff-skin { transform: scale(1.08); }
+.staff-info h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+.rank-badge { display: inline-block; padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; text-transform: uppercase; }
 
-.skin-wrapper {
-    height: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-}
-
-.staff-skin {
-    height: 100%;
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
-    transition: transform 0.3s;
-}
-
-.staff-card:hover .staff-skin {
-    transform: scale(1.1);
-}
-
-.staff-info h3 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.rank-badge {
-    display: inline-block;
-    padding: 4px 14px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-}
-
-.staff-desc {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.4;
-}
-
-/* צבעי מסגרות ותגים לפי דרגה */
 .rank-owner { border-top: 3px solid var(--color-owner); }
 .rank-owner .rank-badge { background: rgba(255, 71, 87, 0.15); color: var(--color-owner); }
-.rank-owner:hover { box-shadow: 0 10px 30px rgba(255, 71, 87, 0.1); }
 
 .rank-builder { border-top: 3px solid var(--color-builder); }
 .rank-builder .rank-badge { background: rgba(46, 213, 115, 0.15); color: var(--color-builder); }
-.rank-builder:hover { box-shadow: 0 10px 30px rgba(46, 213, 115, 0.1); }
 
 .rank-helper { border-top: 3px solid var(--color-helper); }
 .rank-helper .rank-badge { background: rgba(30, 144, 255, 0.15); color: var(--color-helper); }
-.rank-helper:hover { box-shadow: 0 10px 30px rgba(30, 144, 255, 0.1); }
 
-/* התראת העתקה */
-.toast-notification {
+.rank-member { border-top: 3px solid var(--color-member); }
+.rank-member .rank-badge { background: rgba(255, 165, 2, 0.15); color: var(--color-member); }
+
+/* חלון המידע המורחב (Modal) */
+.modal-overlay {
     position: fixed;
-    bottom: 30px;
-    left: 50%;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(5, 5, 8, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal-card {
+    background: #12121a;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    padding: 40px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    animation: modalSlide 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+}
+
+@keyframes modalSlide {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px; left: 20px;
+    background: rgba(255,255,255,0.05);
+    border: none; color: var(--text-secondary);
+    font-size: 24px; width: 36px; height: 36px;
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.modal-close:hover { background: rgba(255,255,255,0.1); color: #fff; }
+.modal-body { display: flex; align-items: center; gap: 35px; }
+.modal-skin-side { height: 200px; display: flex; align-items: center; }
+.modal-skin-large { height: 100%; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6)); }
+.modal-info-side { flex-grow: 1; text-align: right; }
+.modal-info-side h2 { font-size: 28px; font-weight: 800; margin-bottom: 5px; }
+.modal-info-side .rank-badge { margin-bottom: 20px; }
+.modal-info-side p { color: var(--text-secondary); line-height: 1.6; font-size: 16px; }
+
+/* התראת העתקה ופוטר */
+.toast-notification {
+    position: fixed; bottom: 30px; left: 50%;
     transform: translateX(-50%) translateY(100px);
-    background: #101014;
-    border: 1px solid var(--accent);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 10px;
-    font-weight: 500;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    opacity: 0;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
-    z-index: 2000;
+    background: #101014; border: 1px solid var(--accent); color: white;
+    padding: 14px 28px; border-radius: 10px; font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s; z-index: 2000;
 }
+.toast-notification.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+.site-footer { text-align: center; padding: 40px 20px; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 14px; margin-top: auto; }
 
-.toast-notification.show {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-}
-
-/* פוטר קבוע בתחתית */
-.site-footer {
-    text-align: center;
-    padding: 40px 20px;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    font-size: 14px;
-    margin-top: auto;
-}
-
-/* רספונסיביות לניידים */
 @media (max-width: 768px) {
     .navbar { padding: 12px 15px; width: 95%; }
     .logo { font-size: 16px; }
     .nav-links a { margin-right: 8px; font-size: 13px; }
     .hero-content h1 { font-size: 34px; }
     .ip-container { width: 100%; justify-content: space-between; }
-    .ip-details { margin-left: 15px; }
+    .modal-body { flex-direction: column; text-align: center; gap: 20px; }
+    .modal-info-side { text-align: center; }
 }
