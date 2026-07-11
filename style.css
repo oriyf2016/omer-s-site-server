@@ -7,6 +7,11 @@
     --text-primary: #ffffff;
     --text-secondary: #9494a8;
     --border-color: rgba(255, 255, 255, 0.06);
+    
+    /* צבעי דרגות */
+    --color-owner: #ff4757;
+    --color-builder: #2ed573;
+    --color-helper: #1e90ff;
 }
 
 * {
@@ -291,6 +296,80 @@ body {
     border-top: 3px solid var(--accent);
 }
 
+/* מערכת כרטיסיות צוות (Staff) */
+.staff-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.staff-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.staff-card:hover {
+    transform: translateY(-5px);
+}
+
+.skin-wrapper {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.staff-skin {
+    height: 100%;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+    transition: transform 0.3s;
+}
+
+.staff-card:hover .staff-skin {
+    transform: scale(1.1);
+}
+
+.staff-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.rank-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.staff-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* צבעי מסגרות ותגים לפי דרגה */
+.rank-owner { border-top: 3px solid var(--color-owner); }
+.rank-owner .rank-badge { background: rgba(255, 71, 87, 0.15); color: var(--color-owner); }
+.rank-owner:hover { box-shadow: 0 10px 30px rgba(255, 71, 87, 0.1); }
+
+.rank-builder { border-top: 3px solid var(--color-builder); }
+.rank-builder .rank-badge { background: rgba(46, 213, 115, 0.15); color: var(--color-builder); }
+.rank-builder:hover { box-shadow: 0 10px 30px rgba(46, 213, 115, 0.1); }
+
+.rank-helper { border-top: 3px solid var(--color-helper); }
+.rank-helper .rank-badge { background: rgba(30, 144, 255, 0.15); color: var(--color-helper); }
+.rank-helper:hover { box-shadow: 0 10px 30px rgba(30, 144, 255, 0.1); }
+
 /* התראת העתקה */
 .toast-notification {
     position: fixed;
@@ -326,9 +405,9 @@ body {
 
 /* רספונסיביות לניידים */
 @media (max-width: 768px) {
-    .navbar { padding: 12px 20px; }
-    .logo { font-size: 18px; }
-    .nav-links a { margin-right: 12px; font-size: 14px; }
+    .navbar { padding: 12px 15px; width: 95%; }
+    .logo { font-size: 16px; }
+    .nav-links a { margin-right: 8px; font-size: 13px; }
     .hero-content h1 { font-size: 34px; }
     .ip-container { width: 100%; justify-content: space-between; }
     .ip-details { margin-left: 15px; }
