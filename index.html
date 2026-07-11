@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nightfall Style Server</title>
+    <title>OmerDvir123 Minecraft Server</title>
     <!-- פונט מודרני מגוגל -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
@@ -16,69 +16,97 @@
     <!-- סרגל ניווט עליון בסגנון צף -->
     <header class="navbar">
         <div class="nav-container">
-            <div class="logo">NIGHT<span>FALL</span></div>
+            <div class="logo">OMER<span>DVIR</span></div>
             <nav class="nav-links">
-                <a href="#home">בית</a>
-                <a href="#about">על השרת</a>
-                <a href="#modes">מצבי משחק</a>
-                <a href="#store" class="store-link">חנות השרת</a>
+                <a href="#" class="nav-btn active" data-target="home">בית</a>
+                <a href="#" class="nav-btn" data-target="about">על השרת</a>
+                <a href="#" class="nav-btn" data-target="modes">מצבי משחק</a>
+                <a href="https://aternos.org" target="_blank" class="store-link">Aternos</a>
             </nav>
         </div>
     </header>
 
-    <!-- אזור הירו (Hero) מרכזי -->
-    <section id="home" class="hero-section">
-        <div class="hero-content">
-            <div class="status-badge">
-                <span class="pulse-dot"></span>
-                <span id="player-count">טוען שחקנים מחוברים...</span>
-            </div>
-            <h1>ההרפתקה שלך <br>מתחילה בתוך <span class="highlight">החשכה</span></h1>
-            <p>שרת קהילתי מתקדם עם חווית משחק חלקה, הגנות מתקדמות ומערכות ייחודיות שעוד לא ראיתם.</p>
-            
-            <!-- כפתור ה-IP של נייטפול -->
-            <div class="ip-container" id="ip-box" data-ip="play.nightfall.co.il">
-                <div class="ip-details">
-                    <span class="ip-title">כתובת השרת:</span>
-                    <span class="ip-text">play.nightfall.co.il</span>
+    <!-- עמוד 1: דף הבית -->
+    <section id="home" class="page-content active">
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="status-badge">
+                    <span class="pulse-dot"></span>
+                    <span>השרת מוכן לכניסה!</span>
                 </div>
-                <button class="ip-copy-btn">העתק</button>
+                <h1>ההרפתקה שלך <br>מתחילה בתוך <span class="highlight">החשכה</span></h1>
+                <p>שרת קהילתי מתקדם עם חווית משחק חלקה, הגנות מתקדמות ומערכות ייחודיות שעוד לא ראיתם.</p>
+                
+                <!-- כפתור ה-IP המעודכן -->
+                <div class="ip-container" id="ip-box" data-ip="omerdvir123.aternos.me">
+                    <div class="ip-details">
+                        <span class="ip-title">כתובת השרת:</span>
+                        <span class="ip-text">omerdvir123.aternos.me</span>
+                    </div>
+                    <button class="ip-copy-btn">העתק</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- קופסאות מידע / תכונות -->
-    <section id="about" class="features-section scroll-reveal">
-        <div class="section-header">
-            <h2>למה דווקא אנחנו?</h2>
-            <p>אנחנו משקיעים בחומרה הטובה ביותר ובחוויית משחק ללא פשרות</p>
+    <!-- עמוד 2: על השרת -->
+    <section id="about" class="page-content">
+        <div class="page-container">
+            <div class="section-header">
+                <h2>למה דווקא אנחנו?</h2>
+                <p>אנחנו משקיעים בחוויית משחק ללא פשרות ובונים קהילה חזקה</p>
+            </div>
+            <div class="grid-container">
+                <div class="feature-card">
+                    <div class="card-icon">🚀</div>
+                    <h3>ביצועים יציבים</h3>
+                    <p>שרת מותאם אישית לעבודה חלקה ככל הניתן עם מינימום לאגים לחוויה רציפה.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">👥</div>
+                    <h3>קהילה בוגרת</h3>
+                    <p>צוות הנהלה פעיל, שמירה על חוקי המשחק, ועזרה הדדית בין כל השחקנים בשרת.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>מערכות מותאמות</h3>
+                    <p>הגדרות ייחודיות שנבחרו בקפידה כדי להבטיח עניין ממושך ואתגר אמיתי.</p>
+                </div>
+            </div>
         </div>
-        <div class="grid-container">
-            <div class="feature-card">
-                <div class="icon">🚀</div>
-                <h3>ביצועים מקסימליים</h3>
-                <p>אחסון על גבי מעבדי Ryzen חזקים ודיסקים מסוג NVMe ללא לאגים בכלל.</p>
+    </section>
+
+    <!-- עמוד 3: מצבי משחק -->
+    <section id="modes" class="page-content">
+        <div class="page-container">
+            <div class="section-header">
+                <h2>מצבי המשחק שלנו</h2>
+                <p>בחר את הדרך שבה תרצה לשחק ולהוביל את השרת</p>
             </div>
-            <div class="feature-card">
-                <h3>קהילה בוגרת</h3>
-                <p>צוות הנהלה פעיל 24/7, סינון שחקנים קפדני ומערכת תמיכה מהירה בדיסקורד.</p>
-            </div>
-            <div class="feature-card">
-                <h3>מערכות בלעדיות</h3>
-                <p>תוספים ופלאגינים שנכתבו במיוחד עבור השרת שלנו כדי להבטיח עניין ממושך.</p>
+            <div class="grid-container">
+                <div class="feature-card mode-card">
+                    <div class="card-icon">⚔️</div>
+                    <h3>Survival (הישרדות)</h3>
+                    <p>העולם הקלאסי שכולנו אוהבים עם שדרוגים קלים. אסוף משאבים, בנה בית והילחם במפלצות יחד עם חברים.</p>
+                </div>
+                <div class="feature-card mode-card">
+                    <div class="card-icon">👑</div>
+                    <h3>שבטים ואימפריות</h3>
+                    <p>צור שבט משלך, הזמן חברים, כבוש שטחים והפוך לשבט החזק והעשיר ביותר בשרת.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- תחתית האתר -->
     <footer class="site-footer">
-        <p>© 2026 Nightfall Style. כל הזכויות שמורות. האתר אינו קשור ל-Mojang AB.</p>
+        <p>© 2026 OmerDvir123. כל הזכויות שמורות. האתר אינו קשור ל-Mojang AB או ל-Aternos.</p>
     </footer>
 
     <!-- התראה קופצת (Toast) -->
     <div id="toast" class="toast-notification">הכתובת הועתקה! נתראה במשחק 🎮</div>
 
     <!-- חיבור לקובץ הסקריפט -->
-    <script href="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
