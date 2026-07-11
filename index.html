@@ -99,60 +99,67 @@
         </div>
     </section>
 
-    <!-- עמוד 4: צוות השרת (חדש!) -->
+    <!-- עמוד 4: צוות השרת קליקבילי -->
     <section id="staff" class="page-content">
         <div class="page-container">
             <div class="section-header">
                 <h2>הכירו את צוות השרת</h2>
-                <p>האנשים שמנהלים, בונים ועוזרים לשמור על הסדר בשרת</p>
+                <p>לחצו על אחד מחברי הצוות כדי לראות מידע מורחב עליו</p>
             </div>
             <div class="grid-container staff-grid">
                 
-                <!-- אורי - בעלים -->
-                <div class="staff-card rank-owner">
-                    <div class="skin-wrapper">
-                        <img src="https://crafatar.com" alt="Oriyf2016" class="staff-skin">
-                    </div>
-                    <div class="staff-info">
-                        <h3>Oriyf2016</h3>
-                        <span class="rank-badge">בעלים</span>
-                        <p class="staff-desc">אורי - מנהל ומייסד השרת.</p>
-                    </div>
-                </div>
-
                 <!-- עומר - בעלים -->
-                <div class="staff-card rank-owner">
+                <div class="staff-card rank-owner" data-staff="omer">
                     <div class="skin-wrapper">
                         <img src="https://crafatar.com" alt="Binja12345" class="staff-skin">
                     </div>
                     <div class="staff-info">
-                        <h3>Binja12345</h3>
+                        <h3>עומר</h3>
                         <span class="rank-badge">בעלים</span>
-                        <p class="staff-desc">עומר - משנה מדי פעם את השם.</p>
+                    </div>
+                </div>
+
+                <!-- אורי - בעלים -->
+                <div class="staff-card rank-owner" data-staff="ori">
+                    <div class="skin-wrapper">
+                        <img src="https://crafatar.com" alt="Oriyf2016" class="staff-skin">
+                    </div>
+                    <div class="staff-info">
+                        <h3>אורי</h3>
+                        <span class="rank-badge">בעלים</span>
                     </div>
                 </div>
 
                 <!-- איתמר - בנאי -->
-                <div class="staff-card rank-builder">
+                <div class="staff-card rank-builder" data-staff="itamar">
                     <div class="skin-wrapper">
                         <img src="https://crafatar.com" alt="itamarSkull" class="staff-skin">
                     </div>
                     <div class="staff-info">
-                        <h3>itamarSkull</h3>
+                        <h3>איתמר</h3>
                         <span class="rank-badge">בנאי</span>
-                        <p class="staff-desc">איתמר - ובכלל לא רוחני.</p>
                     </div>
                 </div>
 
                 <!-- אפק - הלפר -->
-                <div class="staff-card rank-helper">
+                <div class="staff-card rank-helper" data-staff="afek">
                     <div class="skin-wrapper">
                         <img src="https://crafatar.com" alt="AfekR" class="staff-skin">
                     </div>
                     <div class="staff-info">
-                        <h3>AfekR</h3>
+                        <h3>אפק</h3>
                         <span class="rank-badge">הלפר</span>
-                        <p class="staff-desc">אפק - שחקן יחסית סביר.</p>
+                    </div>
+                </div>
+
+                <!-- אופק - חבר קהילה -->
+                <div class="staff-card rank-member" data-staff="ofek">
+                    <div class="skin-wrapper">
+                        <img src="https://crafatar.com" alt="OfekG8476" class="staff-skin">
+                    </div>
+                    <div class="staff-info">
+                        <h3>אופק</h3>
+                        <span class="rank-badge">קהילה</span>
                     </div>
                 </div>
 
@@ -175,6 +182,27 @@
             </div>
         </div>
     </section>
+
+    <!-- חלון מידע מורחב (Modal) -->
+    <div id="staff-modal" class="modal-overlay">
+        <div class="modal-card">
+            <button class="modal-close">&times;</button>
+            <div class="modal-body">
+                <div class="modal-skin-side">
+                    <img id="modal-skin-img" src="" alt="Skin">
+                </div>
+                <div class="modal-text-side">
+                    <h2 id="modal-title">שם השחקן</h2>
+                    <span id="modal-badge" class="rank-badge">דרגה</span>
+                    <div class="modal-ign-box">
+                        <span>שם במשחק: </span>
+                        <strong id="modal-ign">IGN</strong>
+                    </div>
+                    <p id="modal-desc">תיאור השחקן מורחב כאן...</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- תחתית האתר -->
     <footer class="site-footer">
