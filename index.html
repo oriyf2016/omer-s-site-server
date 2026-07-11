@@ -38,7 +38,7 @@
                 <h1>ההרפתקה שלך <br>מתחילה בתוך <span class="highlight">החשכה</span></h1>
                 <p>שרת קהילתי מתקדם עם חווית משחק חלקה, הגנות מתקדמות ומערכות ייחודיות שעוד לא ראיתם.</p>
                 
-                <!-- כפתור ה-IP -->
+                <!-- כפתור ה-IP המעודכן -->
                 <div class="ip-container" id="ip-box" data-ip="omerdvir123.aternos.me">
                     <div class="ip-details">
                         <span class="ip-title">כתובת השרת:</span>
@@ -99,28 +99,17 @@
         </div>
     </section>
 
-    <!-- עמוד 4: צוות השרת והקהילה -->
+    <!-- עמוד 4: צוות השרת עם חלונות מידע מורחבים בלחיצה -->
     <section id="staff" class="page-content">
         <div class="page-container">
             <div class="section-header">
-                <h2>חברי הקהילה והצוות</h2>
-                <p>לחצו על שחקן כדי לראות עליו מידע מורחב ואת הסקין המלא שלו!</p>
+                <h2>הכירו את צוות השרת</h2>
+                <p>לחצו על כרטיסיית שחקן כדי לראות את הפרופיל והמידע המורחב עליו</p>
             </div>
             <div class="grid-container staff-grid">
                 
-                <!-- עומר -->
-                <div class="staff-card rank-owner" data-staff="owner-omer">
-                    <div class="skin-wrapper">
-                        <img src="https://crafatar.com" alt="Binja12345" class="staff-skin">
-                    </div>
-                    <div class="staff-info">
-                        <h3>Binja12345</h3>
-                        <span class="rank-badge">בעלים</span>
-                    </div>
-                </div>
-
                 <!-- אורי -->
-                <div class="staff-card rank-owner" data-staff="owner-ori">
+                <div class="staff-card rank-owner" data-staff="ori">
                     <div class="skin-wrapper">
                         <img src="https://crafatar.com" alt="Oriyf2016" class="staff-skin">
                     </div>
@@ -130,8 +119,19 @@
                     </div>
                 </div>
 
+                <!-- עומר -->
+                <div class="staff-card rank-owner" data-staff="omer">
+                    <div class="skin-wrapper">
+                        <img src="https://crafatar.com" alt="Binja12345" class="staff-skin">
+                    </div>
+                    <div class="staff-info">
+                        <h3>Binja12345</h3>
+                        <span class="rank-badge">בעלים</span>
+                    </div>
+                </div>
+
                 <!-- איתמר -->
-                <div class="staff-card rank-builder" data-staff="builder-itamar">
+                <div class="staff-card rank-builder" data-staff="itamar">
                     <div class="skin-wrapper">
                         <img src="https://crafatar.com" alt="itamarSkull" class="staff-skin">
                     </div>
@@ -142,7 +142,7 @@
                 </div>
 
                 <!-- אפק -->
-                <div class="staff-card rank-helper" data-staff="helper-afek">
+                <div class="staff-card rank-helper" data-staff="afek">
                     <div class="skin-wrapper">
                         <img src="https://crafatar.com" alt="AfekR" class="staff-skin">
                     </div>
@@ -153,13 +153,13 @@
                 </div>
 
                 <!-- אופק -->
-                <div class="staff-card rank-member" data-staff="member-ofek">
+                <div class="staff-card rank-mod" data-staff="ofekg">
                     <div class="skin-wrapper">
                         <img src="https://crafatar.com" alt="OfekG8476" class="staff-skin">
                     </div>
                     <div class="staff-info">
                         <h3>OfekG8476</h3>
-                        <span class="rank-badge">שחקן קהילה</span>
+                        <span class="rank-badge">מודרייטור</span>
                     </div>
                 </div>
 
@@ -184,17 +184,19 @@
     </section>
 
     <!-- חלון מידע מורחב קופץ (Modal) -->
-    <div class="modal-overlay" id="staff-modal">
+    <div id="staff-modal" class="modal-overlay">
         <div class="modal-card">
-            <button class="modal-close" id="modal-close-btn">×</button>
+            <button class="modal-close">&times;</button>
             <div class="modal-body">
                 <div class="modal-skin-side">
-                    <img src="" id="modal-skin-img" alt="Minecraft Skin" class="modal-skin-large">
+                    <img id="modal-skin-img" src="" alt="Skin">
                 </div>
                 <div class="modal-info-side">
-                    <h2 id="modal-title">שם כותרת</h2>
-                    <span class="rank-badge" id="modal-badge">דרגה</span>
-                    <p id="modal-description">תיאור השחקן מופיע כאן...</p>
+                    <h2 id="modal-title">כותרת</h2>
+                    <span id="modal-badge" class="rank-badge">דרגה</span>
+                    <h4 id="modal-mcname">שם משתמש</h4>
+                    <div class="modal-divider"></div>
+                    <p id="modal-desc">תיאור מורחב...</p>
                 </div>
             </div>
         </div>
