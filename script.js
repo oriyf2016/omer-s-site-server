@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     initIpCopy();
-    fetchServerStatus();
+    initNavigation();
 });
 
 /**
@@ -30,29 +30,31 @@ function initIpCopy() {
 }
 
 /**
- * משיכת כמות השחקנים המחוברים בזמן אמת באמצעות ה-API הציבורי של MC-API
+ * מנגנון החלפת עמודים אמיתי (SPA) ללא צורך בגלילה
  */
-function fetchServerStatus() {
-    const playerCountElement = document.getElementById("player-count");
-    const ipBox = document.getElementById("ip-box");
-    
-    if (!playerCountElement || !ipBox) return;
-    
-    const serverIp = ipBox.getAttribute("data-ip");
+function initNavigation() {
+    const navButtons = document.querySelectorAll(".nav-btn");
+    const pages = document.querySelectorAll(".page-content");
 
-    // שימוש ב-API חינמי לקבלת נתוני שרת מיינקראפט
-    fetch(`https://mcstatus.io{serverIp}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.online) {
-                const onlinePlayers = data.players.online;
-                playerCountElement.textContent = `${onlinePlayers} שחקנים מחוברים כרגע`;
-            } else {
-                playerCountElement.textContent = "השרת בתחזוקה / לא מקוון";
+    navButtons.forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            
+            const targetPageId = button.getAttribute("data-target");
+
+            // הסרת מחלקת active מכל הכפתורים והעמודים
+            navButtons.forEach(btn => btn.classList.remove("active"));
+            pages.forEach(page => page.classList.remove("active"));
+
+            // הוספת מחלקת active לכפתור ולעמוד שנבחרו
+            button.classList.add("active");
+            const targetPage = document.getElementById(targetPageId);
+            if (targetPage) {
+                targetPage.classList.add("active");
             }
-        })
-        .catch(err => {
-            console.error("לא ניתן היה למשוך נתוני שחקנים:", err);
-            playerCountElement.textContent = "כנסו לשחק איתנו!";
+            
+            // גלילה אוטומטית לראש העמוד למקרה שהמשתמש היה למטה
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+    });
 }
