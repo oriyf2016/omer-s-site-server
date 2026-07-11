@@ -121,3 +121,384 @@ body {
 .modal-overlay.active {
     display: flex;
 }
+
+/* מערכת העמודים הדינמית - הסתרה והצגה */
+.page-content {
+    display: none;
+    flex-grow: 1;
+    padding-top: 140px;
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+.page-content.active {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+/* מדור הירו מרכזי לעמוד הבית */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    flex-grow: 1;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+/* תגית סטטוס */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #00e676;
+    border-radius: 50%;
+    margin-left: 8px;
+    box-shadow: 0 0 10px #00e676;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 230, 118, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); }
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content .highlight {
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* תיבת העתקת IP מעוצבת */
+.ip-container {
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 10px 10px 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color 0.3s, transform 0.2s;
+}
+
+.ip-container:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.ip-details {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    margin-left: 30px;
+}
+
+.ip-title {
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.ip-text {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.ip-copy-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.ip-container:hover .ip-copy-btn {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+/* כותרות עמודים */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+}
+
+/* גריד קופסאות */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px 30px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(124, 77, 255, 0.3);
+}
+
+.card-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.mode-card {
+    border-top: 3px solid var(--accent);
+}
+
+/* מערכת כרטיסיות צוות (Staff) */
+.staff-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.staff-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.staff-card:hover {
+    transform: translateY(-8px);
+}
+
+.skin-wrapper {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.staff-skin {
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.6));
+    transition: transform 0.3s;
+}
+
+.staff-card:hover .staff-skin {
+    transform: scale(1.08);
+}
+
+.staff-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.rank-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* הגדרות צבעים מדויקות לדרגות */
+.rank-owner { border-top: 3px solid var(--color-owner); }
+.rank-owner .rank-badge { background: rgba(255, 71, 87, 0.15); color: var(--color-owner); }
+.rank-owner:hover { border-color: var(--color-owner); box-shadow: 0 10px 30px rgba(255, 71, 87, 0.15); }
+
+.rank-moderator { border-top: 3px solid var(--color-moderator); }
+.rank-moderator .rank-badge { background: rgba(255, 165, 2, 0.15); color: var(--color-moderator); }
+.rank-moderator:hover { border-color: var(--color-moderator); box-shadow: 0 10px 30px rgba(255, 165, 2, 0.15); }
+
+.rank-builder { border-top: 3px solid var(--color-builder); }
+.rank-builder .rank-badge { background: rgba(46, 213, 115, 0.15); color: var(--color-builder); }
+.rank-builder:hover { border-color: var(--color-builder); box-shadow: 0 10px 30px rgba(46, 213, 115, 0.15); }
+
+.rank-helper { border-top: 3px solid var(--color-helper); }
+.rank-helper .rank-badge { background: rgba(30, 144, 255, 0.15); color: var(--color-helper); }
+.rank-helper:hover { border-color: var(--color-helper); box-shadow: 0 10px 30px rgba(30, 144, 255, 0.15); }
+
+/* עיצוב פנים המודל הקופץ (Popup Modal) */
+.modal-card {
+    background: #12121a;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    animation: modalSlide 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes modalSlide {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: white;
+}
+
+.modal-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.modal-skin-side {
+    height: 250px;
+    flex-shrink: 0;
+}
+
+.modal-skin-side img {
+    height: 100%;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.6));
+}
+
+.modal-info-side {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.modal-info-side h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.modal-info-side .rank-badge {
+    margin-bottom: 20px;
+}
+
+.modal-info-side p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* התראת העתקה */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #101014;
+    border: 1px solid var(--accent);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+    z-index: 2500;
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 12px 15px; width: 95%; }
+    .logo { font-size: 16px; }
+    .nav-links a { margin-right: 8px; font-size: 13px; }
+    .hero-content h1 { font-size: 34px; }
+    .ip-container { width: 100%; justify-content: space-between; }
+    .modal-flex { flex-direction: column; gap: 20px; text-align: center; }
+    .modal-info-side { text-align: center; }
+}
