@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightfall Style Server</title>
+    <!-- פונט מודרני מגוגל -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- חיבור לקובץ העיצוב -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- סרגל ניווט עליון בסגנון צף -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">NIGHT<span>FALL</span></div>
+            <nav class="nav-links">
+                <a href="#home">בית</a>
+                <a href="#about">על השרת</a>
+                <a href="#modes">מצבי משחק</a>
+                <a href="#store" class="store-link">חנות השרת</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- אזור הירו (Hero) מרכזי -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span id="player-count">טוען שחקנים מחוברים...</span>
+            </div>
+            <h1>ההרפתקה שלך <br>מתחילה בתוך <span class="highlight">החשכה</span></h1>
+            <p>שרת קהילתי מתקדם עם חווית משחק חלקה, הגנות מתקדמות ומערכות ייחודיות שעוד לא ראיתם.</p>
+            
+            <!-- כפתור ה-IP של נייטפול -->
+            <div class="ip-container" id="ip-box" data-ip="play.nightfall.co.il">
+                <div class="ip-details">
+                    <span class="ip-title">כתובת השרת:</span>
+                    <span class="ip-text">play.nightfall.co.il</span>
+                </div>
+                <button class="ip-copy-btn">העתק</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- קופסאות מידע / תכונות -->
+    <section id="about" class="features-section scroll-reveal">
+        <div class="section-header">
+            <h2>למה דווקא אנחנו?</h2>
+            <p>אנחנו משקיעים בחומרה הטובה ביותר ובחוויית משחק ללא פשרות</p>
+        </div>
+        <div class="grid-container">
+            <div class="feature-card">
+                <div class="icon">🚀</div>
+                <h3>ביצועים מקסימליים</h3>
+                <p>אחסון על גבי מעבדי Ryzen חזקים ודיסקים מסוג NVMe ללא לאגים בכלל.</p>
+            </div>
+            <div class="feature-card">
+                <h3>קהילה בוגרת</h3>
+                <p>צוות הנהלה פעיל 24/7, סינון שחקנים קפדני ומערכת תמיכה מהירה בדיסקורד.</p>
+            </div>
+            <div class="feature-card">
+                <h3>מערכות בלעדיות</h3>
+                <p>תוספים ופלאגינים שנכתבו במיוחד עבור השרת שלנו כדי להבטיח עניין ממושך.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- תחתית האתר -->
+    <footer class="site-footer">
+        <p>© 2026 Nightfall Style. כל הזכויות שמורות. האתר אינו קשור ל-Mojang AB.</p>
+    </footer>
+
+    <!-- התראה קופצת (Toast) -->
+    <div id="toast" class="toast-notification">הכתובת הועתקה! נתראה במשחק 🎮</div>
+
+    <!-- חיבור לקובץ הסקריפט -->
+    <script href="script.js"></script>
+</body>
+</html>
