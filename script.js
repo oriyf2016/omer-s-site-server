@@ -55,7 +55,7 @@ function initNavigation() {
 }
 
 /**
- * מנגנון המודל המורחב לחברי הצוות על סמך נתוני הטקסטים המעודכנים
+ * מנגנון המודל המורחב לחברי הצוות (אפק אדמין ואופק הלפר)
  */
 function initStaffModal() {
     const staffCards = document.querySelectorAll(".staff-card");
@@ -67,8 +67,16 @@ function initStaffModal() {
     const modalDesc = document.getElementById("modal-desc");
     const modalSkinImg = document.getElementById("modal-skin-img");
 
-    // מאגר המידע המעודכן לפי השינויים בדרגות ובצוות
     const staffData = {
         ori: {
             title: "אורי",
-            
+            rank: "בעלים",
+            desc: "אורי הוא בעלי השרת התומך בתכנות וזמינות סבירה וגם תכנת את האתר בו אתם נמצאים!",
+            skin: "https://surgeplay.com",
+            colorClass: "rank-owner"
+        },
+        omer: {
+            title: "עומר",
+            rank: "בעלים",
+            desc: "עומר הוא בעלי השרת שנאמן וזמין זמן רב ואוהב את השרת.",
+            skin: "https://surgeplay.com
