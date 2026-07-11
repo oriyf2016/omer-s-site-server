@@ -10,8 +10,8 @@
     
     /* צבעי דרגות מעודכנים */
     --color-owner: #ff4757;
-    --color-admin: #d32f2f;     /* אדום כהה יוקרתי לאדמין */
-    --color-helper: #1e90ff;    /* כחול להלפר */
+    --color-admin: #ff6b81;
+    --color-helper: #1e90ff;
 }
 
 * {
@@ -100,7 +100,7 @@ body {
     box-shadow: 0 6px 20px var(--accent);
 }
 
-/* הגדרת ה-Modal המרכזית */
+/* עיצוב המודל הקופץ - פתרון חסימת הלחצנים הקיים */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -111,14 +111,20 @@ body {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     z-index: 2000;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* הופך את השכבה ללא חוסמת כשהיא סגורה */
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    transition: opacity 0.3s, visibility 0.3s;
 }
 
 .modal-overlay.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto; /* מחזיר לחיצות כשהחלון פתוח */
 }
 /* מערכת העמודים הדינמית - הסתרה והצגה */
 .page-content {
@@ -371,20 +377,20 @@ body {
     font-weight: 700;
 }
 
-/* הגדרות צבעים ומסגרות לדרגות (כולל אדמין החדש!) */
+/* הגדרות צבעים מדויקות לדרגות */
 .rank-owner { border-top: 3px solid var(--color-owner); }
 .rank-owner .rank-badge { background: rgba(255, 71, 87, 0.15); color: var(--color-owner); }
 .rank-owner:hover { border-color: var(--color-owner); box-shadow: 0 10px 30px rgba(255, 71, 87, 0.15); }
 
 .rank-admin { border-top: 3px solid var(--color-admin); }
-.rank-admin .rank-badge { background: rgba(211, 47, 47, 0.15); color: var(--color-admin); }
-.rank-admin:hover { border-color: var(--color-admin); box-shadow: 0 10px 30px rgba(211, 47, 47, 0.15); }
+.rank-admin .rank-badge { background: rgba(255, 107, 129, 0.15); color: var(--color-admin); }
+.rank-admin:hover { border-color: var(--color-admin); box-shadow: 0 10px 30px rgba(255, 107, 129, 0.15); }
 
 .rank-helper { border-top: 3px solid var(--color-helper); }
 .rank-helper .rank-badge { background: rgba(30, 144, 255, 0.15); color: var(--color-helper); }
 .rank-helper:hover { border-color: var(--color-helper); box-shadow: 0 10px 30px rgba(30, 144, 255, 0.15); }
 
-/* עיצוב פנים המודל הקופץ (Popup Modal) */
+/* עיצוב פנים המודל הקופץ */
 .modal-card {
     background: #12121a;
     border: 1px solid var(--border-color);
@@ -394,12 +400,14 @@ body {
     padding: 40px;
     position: relative;
     box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-    animation: modalSlide 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
 }
 
-@keyframes modalSlide {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+.modal-overlay.active .modal-card {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .modal-close {
