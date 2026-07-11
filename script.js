@@ -62,13 +62,11 @@ function initStaffModal() {
     const modal = document.getElementById("staff-modal");
     const modalClose = document.querySelector(".modal-close");
     
-    // אלמנטים בתוך הפופ-אפ לעדכון דינמי
     const modalTitle = document.getElementById("modal-title");
     const modalRank = document.getElementById("modal-rank");
     const modalDesc = document.getElementById("modal-desc");
     const modalSkinImg = document.getElementById("modal-skin-img");
 
-    // מאגר המידע המורחב על השחקנים לפי הדרישות שלך
     const staffData = {
         ori: {
             title: "אורי",
@@ -109,7 +107,6 @@ function initStaffModal() {
 
     if (!modal || !modalClose) return;
 
-    // פתיחת המודל בעת לחיצה על כרטיס שחקן
     staffCards.forEach(card => {
         card.addEventListener("click", () => {
             const id = card.getAttribute("data-staff");
@@ -121,26 +118,22 @@ function initStaffModal() {
                 modalDesc.textContent = data.desc;
                 modalSkinImg.src = data.skin;
 
-                // איפוס מחלקות צבע קודמות של דרגות במודל והשמת החדשה
                 modalRank.className = "rank-badge";
                 
-                // הוספת סגנון צבע מותאם לפי סוג הדרגה
-                if (data.colorClass === "rank-owner") modalRank.style.backgroundColor = "rgba(255, 71, 87, 0.15)", modalRank.style.color = "#ff4757";
-                if (data.colorClass === "rank-moderator") modalRank.style.backgroundColor = "rgba(255, 165, 2, 0.15)", modalRank.style.color = "#ffa502";
-                if (data.colorClass === "rank-builder") modalRank.style.backgroundColor = "rgba(46, 213, 115, 0.15)", modalRank.style.color = "#2ed573";
-                if (data.colorClass === "rank-helper") modalRank.style.backgroundColor = "rgba(30, 144, 255, 0.15)", modalRank.style.color = "#1e90ff";
+                if (data.colorClass === "rank-owner") { modalRank.style.backgroundColor = "rgba(255, 71, 87, 0.15)"; modalRank.style.color = "#ff4757"; }
+                if (data.colorClass === "rank-moderator") { modalRank.style.backgroundColor = "rgba(255, 165, 2, 0.15)"; modalRank.style.color = "#ffa502"; }
+                if (data.colorClass === "rank-builder") { modalRank.style.backgroundColor = "rgba(46, 213, 115, 0.15)"; modalRank.style.color = "#2ed573"; }
+                if (data.colorClass === "rank-helper") { modalRank.style.backgroundColor = "rgba(30, 144, 255, 0.15)"; modalRank.style.color = "#1e90ff"; }
 
                 modal.classList.add("active");
             }
         });
     });
 
-    // סגירת המודל בלחיצה על ה-X
     modalClose.addEventListener("click", () => {
         modal.classList.remove("active");
     });
 
-    // סגירת המודל בלחיצה מחוץ לכרטיס המידע
     modal.addEventListener("click", (e) => {
         if (e.target === modal) {
             modal.classList.remove("active");
